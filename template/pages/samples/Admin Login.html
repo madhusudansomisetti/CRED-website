@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PAYPOINT</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <!-- End layout styles -->
+    <link rel="icon" href="../../../assets/imgs/Logo.png" >
+  </head>
+  <body>
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+      <div class="container">
+          <a class="navbar-brand" href="../../../index.html#home"><img src="../../../assets/imgs/Logo.PNG" alt="" style="width:70px; height:70px;"><strong class="text-primary">PAY</strong><span class="text-light">POINT</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../index.html#features">Features</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../index.html#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../index.html#pricing">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../index.html#review">Reviews</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="../../../index.html#contact">Contact</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link btn btn-primary text-dark shadow-none ml-md-4" href="/login">Login/Signup</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+    <div class="container-scroller">
+      <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="row w-100 m-0">
+          <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+            <div class="card col-lg-4 mx-auto">
+              <div class="card-body px-5 py-5">
+                <h3 class="card-title text-left mb-3">Admin Login</h3>
+                <form>
+                  <div class="form-group">
+                    <label>Admin or email *</label>
+                    <input type="text" class="form-control p_input" id="email_id">
+                  </div>
+                  <div class="form-group">
+                    <label>Password *</label>
+                    <input type="password" class="form-control p_input" id="pwd_id">
+                    <i class="far fa-eye" id="togglePassword" style="margin: 0px 220px 0px; text-align:center;cursor: pointer;" aria-hidden="true"></i>
+                  </div>
+                  <div class="form-group d-flex align-items-center justify-content-between">
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input"> Remember me </label>
+                    </div>
+                    <a href="#" class="forgot-pass">Forgot password</a>
+                  </div>
+                  <div class="text-center">
+                    <button type="button" class="btn btn-primary btn-block enter-btn" onclick="admin()">Login</button>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+        </div>
+        <!-- row ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+  <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="../../assets/js/off-canvas.js"></script>
+    <script src="../../assets/js/hoverable-collapse.js"></script>
+    <script src="../../assets/js/misc.js"></script>
+    <script src="../../assets/js/settings.js"></script>
+    <script src="../../assets/js/todolist.js"></script>
+    <!-- endinject -->
+
+    <script>
+        function admin(){
+        var email=document.getElementById('email_id').value;
+        var password=document.getElementById("pwd_id").value;
+
+        if(email_id.length<=0){
+      // alert("username is required");
+      document.getElementById("message1").innerHTML="!Please enter your email"
+      email_id.focus();
+      
+    }
+    else if(password.length<=0){
+      document.getElementById("message2").innerHTML="!Please enter password"
+      password.focus();
+    }
+    if(email.length!=0 && password.length!=0){
+      var data = {
+        email : email,
+        password : password
+      }
+    console.log(data);
+    }
+    fetch('/admindata',{
+      method:'POST',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('success:', data);
+      // console.log("Hai")
+      // console.log(data)
+      window.location.href="/admin";
+    })
+    .catch((error)=>{
+        alert("Not Valid")
+      })
+  };
+
+  const togglePassword=document.querySelector('#togglePassword');
+  password=document.querySelector('#pwd_id');
+  togglePassword.addEventListener('click',function(e){
+    const type=password.getAttribute('type')==='password' ?'text':'password';
+    password.setAttribute('type',type);
+    this.classList.toogle('fa-eye-slash');
+
+  });
+
+      </script>
+
+  </body>
+</html>

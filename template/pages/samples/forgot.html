@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>PAYPOINT</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="../../assets/vendors/mdi/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="../../assets/vendors/css/vendor.bundle.base.css">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <!-- endinject -->
+  <!-- Layout styles -->
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <!-- End layout styles -->
+  <link rel="shortcut icon" href="https://i.ibb.co/gtRrDPq/Logo.png" />
+    <title>PAYPOINT</title>
+  
+</head>
+<body>
+    <nav id="scrollspy" class="navbar page-navbar navbar-dark navbar-expand-md fixed-top" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="navbar-brand" href="/#home"><img src="../../../assets/imgs/Logo.PNG" alt="" style="width:70px; height:70px;"><strong class="text-primary">PAY</strong><span class="text-light">POINT</span></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#review">Reviews</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/#contact">Contact</a>
+                    </li>
+                   
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+          <div class="row w-100 m-0">
+            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth login-bg">
+              <div class="card col-lg-6 mx-auto">
+                <div class="card-body px-4 py-4">
+                  <h3 class="card-title text-left mb-1">Forgot Password</h3>
+                  
+                  <form method="POST">
+                    <div class="form-group">
+                      <label>Email or Mobile</label>
+                      <input type="text" class="form-control p_input" placeholder="Email/Mobile" id="fullname_id">
+                      <br>
+                      <button type="button" class="btn btn-primary" onclick="SendOTP()">SendOTP</button>
+                    </div>
+                
+
+
+                    <div class="form-group">
+                      <label>New Password</label>
+                      <input type="password" class="form-control p_input" placeholder="New Password" id="pwd_id">
+                    </div>
+                    <div class="form-group">
+                      <label>Confirm Password</label>
+                      <input type="password" class="form-control p_input" placeholder="Confirm password" id="pwd_id">
+                    </div>
+                    <div class="form-group d-flex align-items-center justify-content-between">
+                        <div class="form-check-label">
+                          <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input"> Terms & Conditions </label>
+                        </div>
+                        
+                      </div>
+                    
+                    <div class="text-center">
+                      <button type="button" class="btn btn-primary btn-block enter-btn">Submit</button>
+                    </div>
+                                    </form>
+                </div>
+              </div>
+            </div>
+            <!-- content-wrapper ends -->
+          </div>
+          <!-- row ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+      </div>
+   
+   
+  
+    <script>
+        
+        //function generate of otp
+        function SendOTP(){
+          
+          var OTPS = Math.floor((Math.random()*1000000)+1);
+
+          
+          console.log(OTPS);
+          //return OTP;
+
+        }
+      
+    </script>
+</body>
+</html>
